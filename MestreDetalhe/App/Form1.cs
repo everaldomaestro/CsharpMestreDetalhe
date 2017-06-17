@@ -14,7 +14,7 @@ namespace App
     public partial class Form1 : Form
     {
         private SqlConnection SQLCon;
-        private DataSet ds = new DataSet("CustOrders");
+        private DataSet ds;
         private DataViewManager dsView;
 
         public Form1()
@@ -33,7 +33,7 @@ namespace App
                 "Password =" + _MSSQLPass + ";";
 
             SQLCon = new SqlConnection(SQLStringCon);
-            
+            ds = new DataSet("CustOrders");
 
             // Preenche o Dataset com os dados da tabela Customers,
             // mapeia o nome padrão da tabela
